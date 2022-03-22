@@ -1,0 +1,8 @@
+main: de.syntaxtnt.minecraft.lobbysystem.LobbySystem
+name: LobbySystem
+version: 1.0.0
+author: SyntaxJason
+
+commands:
+  lobby:
+  build:
