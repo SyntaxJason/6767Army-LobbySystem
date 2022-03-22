@@ -96,7 +96,7 @@ public class InteractListener implements Listener {
 			for(Player online : Bukkit.getOnlinePlayers()) {
 				player.hidePlayer(online);
 				HIDE_PLAYER.add(player.getUniqueId());
-				player.getInventory().setItem(5, SHOW_PLAYER);
+				player.getInventory().setItem(6, SHOW_PLAYER);
 			}
 		}
 		

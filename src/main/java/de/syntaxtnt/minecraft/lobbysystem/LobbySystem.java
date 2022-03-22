@@ -92,12 +92,12 @@ public class LobbySystem extends JavaPlugin {
 			string.add("test");
 			Config.setMessage(string);
 		}
-		if(!config.contains("Lobby.actionbar.cooldown")) {
+		if (!config.contains("Lobby.actionbar.cooldown")) {
 			Config.setActionCountdown(3);
 		}
-		if(!config.contains("Lobby.scoreboard")) {
+		if (!config.contains("Lobby.scoreboard")) {
 			ArrayList<String> array = new ArrayList<>();
-			for(int i = 0; i < 15; i++) {
+			for (int i = 0; i < 15; i++) {
 				array.add("test");
 			}
 			Config.setScoreboard(array);
