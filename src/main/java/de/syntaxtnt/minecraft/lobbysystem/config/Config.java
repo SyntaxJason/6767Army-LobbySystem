@@ -2,6 +2,7 @@ package de.syntaxtnt.minecraft.lobbysystem.config;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -40,6 +41,7 @@ public class Config {
 
 	public static Location getLocation(String gamePath) {
 		String compact = Config.getString("Lobby.location." + gamePath);
+		if(compact != null) {
 		String world = compact.split(":")[0];
 		double x = Double.parseDouble(compact.split(":")[1].split(";")[0]);
 		double y = Double.parseDouble(compact.split(";")[1]);
@@ -48,6 +50,8 @@ public class Config {
 		float yaw = Float.parseFloat(compact.split(";")[4]);
 		Location loc = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
 		return loc;
+		}
+		return null;
 	}
 
 	public static void setText(List<String> text) {
@@ -84,7 +88,24 @@ public class Config {
 	public static List<String> getScoreboard() {
 		return Config.getStringList("Lobby.scoreboard");
 	}
+	
+	public static void setDoubleJumpMutliply(double multiply) {
+		Config.set("Lobby.doublejump.multiply", multiply);
+	}
 
+	public static void setDoubleJumpY(double Y) {
+		Config.set("Lobby.doublejump.Y", Y);
+	}
+	
+	public static ArrayList<Double> getDoubleJump() {
+		ArrayList<Double> list = new ArrayList<>();
+		Double multiply = Config.getDouble("Lobby.doublejump.multiply");
+		Double Y = Config.getDouble("Lobby.doublejump.Y");
+		list.add(multiply);
+		list.add(Y);
+		return list;
+	}
+	
 	public static FileConfiguration get() {
 		return Config;
 	}

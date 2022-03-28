@@ -17,6 +17,7 @@ import de.syntaxtnt.minecraft.lobbysystem.commands.TabComplete;
 import de.syntaxtnt.minecraft.lobbysystem.config.Config;
 import de.syntaxtnt.minecraft.lobbysystem.listener.CommandListener;
 import de.syntaxtnt.minecraft.lobbysystem.listener.DamageListener;
+import de.syntaxtnt.minecraft.lobbysystem.listener.DoubleJumpListener;
 import de.syntaxtnt.minecraft.lobbysystem.listener.InteractListener;
 import de.syntaxtnt.minecraft.lobbysystem.listener.InventoryClickListener;
 import de.syntaxtnt.minecraft.lobbysystem.listener.MainListener;
@@ -68,6 +69,7 @@ public class LobbySystem extends JavaPlugin {
 		manager.registerEvents(new MainListener(), this);
 		manager.registerEvents(new InventoryClickListener(), this);
 		manager.registerEvents(new CommandListener(), this);
+		manager.registerEvents(new DoubleJumpListener(), this);
 	}
 
 	public void registerCommands() {
@@ -101,6 +103,12 @@ public class LobbySystem extends JavaPlugin {
 				array.add("test");
 			}
 			Config.setScoreboard(array);
+		}
+		if(!config.contains("Lobby.doublejump.multiply")) {
+			Config.setDoubleJumpMutliply(1.6d);
+		}
+		if(!config.contains("Lobby.doublejump.Y")) {
+			Config.setDoubleJumpY(1.0d);
 		}
 	}
 

@@ -15,6 +15,7 @@ import static de.syntaxtnt.minecraft.lobbysystem.LobbySystem.*;
 
 public class PlayerJoinLeaveListener implements Listener {
 
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();

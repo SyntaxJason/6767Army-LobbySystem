@@ -86,8 +86,7 @@ public class InteractListener implements Listener {
 		}
 		
 		if(event.getItem().equals(InventoryPlaceholder.HIDE_PLAYER)) {
-			if(Cooldown.checkCooldown(player) == true) {
-				player.sendMessage(PREFIX + "Du musst noch " + Cooldown.getCooldown(player) + " Sekunden warten"); 
+			if(Cooldown.checkCooldown(player) == true) { 
 				return;
 			}
 			Cooldown.setCooldown(player, 5);
@@ -101,8 +100,7 @@ public class InteractListener implements Listener {
 		}
 		
 		if(event.getItem().equals(SHOW_PLAYER)) {
-			if(Cooldown.checkCooldown(player) == true) {
-				player.sendMessage(PREFIX + "Du musst noch " + Cooldown.getCooldown(player) + " Sekunden warten"); 
+			if(Cooldown.checkCooldown(player) == true) { 
 				return;
 			}
 			Cooldown.setCooldown(player, 5);
@@ -112,7 +110,7 @@ public class InteractListener implements Listener {
 				player.showPlayer(online);
 			}
 			HIDE_PLAYER.remove(player.getUniqueId());
-			player.getInventory().setItem(5, InventoryPlaceholder.HIDE_PLAYER);
+			player.getInventory().setItem(6, InventoryPlaceholder.HIDE_PLAYER);
 		}
 		
 		if(LobbyCommand.build.contains(player.getUniqueId())) {

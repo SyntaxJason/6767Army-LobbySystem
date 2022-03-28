@@ -41,7 +41,7 @@ public class InventoryPlaceholder {
 		List<String> pages = meta.getPages();
 		List<String> newpages = new ArrayList<>();
 		for(String page : pages) {
-			newpages.add(BukkitColor.apply("&9" + page));
+			newpages.add(BukkitColor.apply("&9" + page.replaceAll("/n", "\n")));
 			meta.setPages(newpages);
 		}
 		book.setItemMeta(meta);

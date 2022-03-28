@@ -18,10 +18,6 @@ public class Cooldown {
 		cooldown.put(player.getUniqueId(), delay);
 	}
 
-	public static int getCooldown(Player player) {
-		return Math.toIntExact(Math.round((cooldown.get(player.getUniqueId()) - System.currentTimeMillis() / 1000)));
-	}
-
 	public static boolean checkCooldown(Player player) {
 		if (!cooldown.containsKey(player.getUniqueId())
 				|| cooldown.get(player.getUniqueId()) <= System.currentTimeMillis()) {

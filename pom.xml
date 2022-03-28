@@ -3,7 +3,7 @@
 	<groupId>de.syntaxtnt.minecraft</groupId>
 	<artifactId>lobbysystem</artifactId>
 	<name>LobbySystem</name>
-	<version>0.0.1-BETA</version>
+	<version>0.0.2-BETA</version>
 
 	<pluginRepositories>
 		<pluginRepository>

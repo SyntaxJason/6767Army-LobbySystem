@@ -25,6 +25,17 @@ public class LobbyCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
 		Player player = (Player) sender;
+		
+		if(args.length == 0) {
+			if(player.hasPermission("Lobby.lobby")) {
+			player.sendMessage(PREFIX + BukkitColor.apply("» &eLobby Commands"));
+			player.sendMessage(BukkitColor.apply("&6/lobby set &8»&7 Setze die Positionen des Teleporters"));
+			player.sendMessage(BukkitColor.apply("&6/lobby rl &8»&7 Lade die Config des Plugins neu"));
+			player.sendMessage(BukkitColor.apply("&6/lobby reload &8»&7 Lade die Config des Plugins neu"));
+			} else {
+				player.sendMessage(PREFIX + BukkitColor.apply("&cDu hast keine Berechtigungen!"));
+			}
+		}
 
 		switch (args[0].toLowerCase()) {
 		case "reload": {

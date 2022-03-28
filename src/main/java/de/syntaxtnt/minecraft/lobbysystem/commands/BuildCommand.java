@@ -30,10 +30,10 @@ public class BuildCommand implements CommandExecutor {
 				return true;
 			}
 			LobbyCommand.build.remove(player.getUniqueId());
-			player.getInventory().setItem(6, SPEED);
+			player.getInventory().setItem(5, SPEED);
 			player.getInventory().setItem(2, NAVIGATOR);
 			player.getInventory().setItem(3, INFOS);
-			player.getInventory().setItem(5, HIDE_PLAYER);
+			player.getInventory().setItem(6, HIDE_PLAYER);
 			player.setGameMode(GameMode.SURVIVAL);
 			player.sendMessage(PREFIX + BukkitColor.apply("Du bist jetzt nicht mehr Bauen"));
 			return true;
